@@ -6,7 +6,6 @@ FollowAnything is a zero-shot detection, tracking, and drone control system usin
 - Zero-shot object detection (DINO, CLIP, SAM)
 - Object tracking (AOT, SiamMask)
 - Interactive selection (click/box)
-- Drone control via MAVSDK
 - Video/image input and output
 - Visualization and saving of results
 
@@ -25,15 +24,23 @@ FollowAnything is a zero-shot detection, tracking, and drone control system usin
    ```
 2. **Prepare models:**
    - Download DINO and SiamMask checkpoints as needed.
-3. **Run main script:**
-   ```bash
-   python follow_anything.py --detect click --tracker aot
-   ```
-   - See script arguments for options (e.g., `--detect dino`, `--tracker siammask`, etc.)
 
-## Usage
-- For interactive detection, use `--detect click` or `--detect box`.
-- For video input, set `--path_to_video` to a file or directory.
+## How to Run
+
+To run the main script with interactive click detection, SAM, and visualization from your webcam, use:
+
+```bash
+python follow_anything.py --detect click --use_sam --path_to_video 0 --plot_visualizations
+python follow_anything.py --detect image --path_to_video 0 --plot_visualizations --ref_image <image_path>
+```
+
+You can change the arguments as needed:
+- `--detect click` for click-based detection (or `dino`, `box`, etc.)
+- `--use_sam` to enable SAM segmentation
+- `--path_to_video 0` to use the default webcam (or provide a video file path)
+- `--plot_visualizations` to show visual output
+
+See the script for more options and argument details.
 
 ## Excluding Files from Git
 Add the following to your `.gitignore`:
@@ -55,5 +62,4 @@ frames/
 - DINO: Facebook Research
 - SAM: Meta AI
 - SiamMask: Original authors
-- MAVSDK: Drone control
 
