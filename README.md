@@ -42,8 +42,7 @@ You can change the arguments as needed:
 
 See the script for more options and argument details.
 
-## Excluding Files from Git
-Add the following to your `.gitignore`:
+## Excluding Files in Git
 ```
 env/
 __pycache__/
@@ -51,10 +50,16 @@ __pycache__/
 *.pth
 *.avi
 *.mp4
+*.png
+*.jpg
 img_logs/
 result/
 results/
 frames/
+checkpoints/
+Pytorch-Correlation-extension/
+assets/
+VIDEO/
 ```
 
 
